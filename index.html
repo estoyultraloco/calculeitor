@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora Notas</title>
+</head>
+<body>
+  <h2>Pruebas</h2>
+  <input id="p1" placeholder="Prueba 1">
+  <input id="p2" placeholder="Prueba 2">
+  <input id="p3" placeholder="Prueba 3">
 
+  <h2>Tareas</h2>
+  <input id="t1" placeholder="Tarea 1">
+  <input id="t2" placeholder="Tarea 2">
+  <input id="t3" placeholder="Tarea 3">
+  <input id="t4" placeholder="Tarea 4">
+  <input id="t5" placeholder="Tarea 5">
+  <input id="t6" placeholder="Tarea 6">
+  <input id="t7" placeholder="Tarea 7">
+
+  <br><br>
+  <button onclick="calcular()">Calcular</button>
+
+  <h3 id="resultado"></h3>
+  <h4 id="progreso"></h4>
+
+<script>
+function calcular() {
+  let pruebas = [p1.value, p2.value, p3.value];
+  let tareas = [t1.value, t2.value, t3.value, t4.value, t5.value, t6.value, t7.value];
+
+  let pesoPrueba = 0.7 / 3;
+  let pesoTarea = 0.3 / 7;
+
+  let suma = 0;
+  let pesoUsado = 0;
+
+  pruebas.forEach(n => {
+    if (n !== "") {
+      suma += n * pesoPrueba;
+      pesoUsado += pesoPrueba;
+    }
+  });
+
+  tareas.forEach(n => {
+    if (n !== "") {
+      suma += n * pesoTarea;
+      pesoUsado += pesoTarea;
+    }
+  });
+
+  let promedioActual = suma / pesoUsado;
+  let avance = pesoUsado * 100;
+
+  resultado.innerText = "Promedio actual: " + promedioActual.toFixed(2);
+  progreso.innerText = "Has completado: " + avance.toFixed(1) + "% del curso";
+}
+</script>
+</body>
+</html>
