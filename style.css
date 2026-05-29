@@ -60,7 +60,6 @@ button:hover {
   transform: translateY(-2px);
   box-shadow: 0 0 12px rgba(1, 205, 254, 0.6);
 }
-
 .sun {
   position: fixed;
   top: 80px;
@@ -70,7 +69,31 @@ button:hover {
   height: 300px;
   border-radius: 50%;
   background: linear-gradient(#ff71ce, #fffb96);
-  opacity: 0.8;
+  opacity: 0.85;
   filter: blur(1px);
   z-index: -1;
+  overflow: hidden;
+  animation: floatSun 6s ease-in-out infinite;
+}
+
+/* líneas horizontales */
+.sun::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.2) 0px,
+    rgba(0,0,0,0.2) 4px,
+    transparent 6px,
+    transparent 12px
+  );
+}
+
+/* animación piola */
+@keyframes floatSun {
+  0%   { transform: translateX(-50%) translateY(0px); }
+  50%  { transform: translateX(-50%) translateY(10px); }
+  100% { transform: translateX(-50%) translateY(0px); }
 }
