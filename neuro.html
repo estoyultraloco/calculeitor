@@ -1,1 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Neurociencias</title>
+</head>
+<body>
+  <h2>Neurociencias</h2>
 
+  <h3>Pruebas (70%)</h3>
+  <input id="p1" placeholder="Prueba 1">
+  <input id="p2" placeholder="Prueba 2">
+  <input id="p3" placeholder="Prueba 3">
+
+  <h3>Controles (30%)</h3>
+  <input id="c1" placeholder="Control 1">
+  <input id="c2" placeholder="Control 2">
+  <input id="c3" placeholder="Control 3">
+  <input id="c4" placeholder="Control 4">
+  <input id="c5" placeholder="Control 5">
+  <input id="c6" placeholder="Control 6">
+  <input id="c7" placeholder="Control 7">
+  <input id="c8" placeholder="Control 8">
+  <input id="c9" placeholder="Control 9">
+
+  <br><br>
+  <button onclick="calcular()">Calcular</button>
+  <button onclick="window.location.href='index.html'">Volver</button>
+
+  <h3 id="resultado"></h3>
+  <h4 id="progreso"></h4>
+
+<script>
+function calcular() {
+  let suma = 0;
+  let pesoUsado = 0;
+
+  let pesoPrueba = 0.7 / 3;
+  let pesoControl = 0.3 / 9;
+
+  let pruebas = [p1.value, p2.value, p3.value];
+  let controles = [c1.value, c2.value, c3.value, c4.value, c5.value, c6.value, c7.value, c8.value, c9.value];
+
+  pruebas.forEach(n => {
+    if (n !== "") {
+      suma += n * pesoPrueba;
+      pesoUsado += pesoPrueba;
+    }
+  });
+
+  controles.forEach(n => {
+    if (n !== "") {
+      suma += n * pesoControl;
+      pesoUsado += pesoControl;
+    }
+  });
+
+  let promedio = suma / pesoUsado;
+  let avance = pesoUsado * 100;
+
+  resultado.innerText = "Promedio actual: " + promedio.toFixed(2);
+  progreso.innerText = "Completado: " + avance.toFixed(1) + "%";
+}
+</script>
+</body>
+</html>
