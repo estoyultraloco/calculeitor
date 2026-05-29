@@ -1,1 +1,49 @@
+body {
+  font-family: "Courier New", monospace;
+  background: linear-gradient(135deg, #ff71ce, #01cdfe, #05ffa1);
+  color: #ffffff;
+  text-align: center;
+  padding: 30px;
+}
 
+h1, h2, h3 {
+  text-shadow: 2px 2px #ff00ff;
+}
+
+input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 200px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.3);
+  color: white;
+  outline: none;
+}
+
+input::placeholder {
+  color: #ddd;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: #ff00ff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #01cdfe;
+  transform: scale(1.1);
+}
+
+h3, h4 {
+  margin-top: 20px;
+  text-shadow: 1px 1px #000;
+}
