@@ -1,1 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Psicología Social</title>
+</head>
+<body>
+  <h2>Psicología Social</h2>
 
+  <h3>Pruebas (60%)</h3>
+  <input id="p1" placeholder="Prueba 1">
+  <input id="p2" placeholder="Prueba 2">
+
+  <h3>Trabajo</h3>
+  <input id="t1" placeholder="Parte 1 (15%)">
+  <input id="t2" placeholder="Parte 2 (25%)">
+
+  <br><br>
+  <button onclick="calcular()">Calcular</button>
+  <button onclick="window.location.href='index.html'">Volver</button>
+
+  <h3 id="resultado"></h3>
+  <h4 id="progreso"></h4>
+
+<script>
+function calcular() {
+  let suma = 0;
+  let pesoUsado = 0;
+
+  // pruebas (60% total → 30% cada una)
+  if (p1.value !== "") {
+    suma += p1.value * 0.3;
+    pesoUsado += 0.3;
+  }
+  if (p2.value !== "") {
+    suma += p2.value * 0.3;
+    pesoUsado += 0.3;
+  }
+
+  // trabajo
+  if (t1.value !== "") {
+    suma += t1.value * 0.15;
+    pesoUsado += 0.15;
+  }
+  if (t2.value !== "") {
+    suma += t2.value * 0.25;
+    pesoUsado += 0.25;
+  }
+
+  let promedio = suma / pesoUsado;
+  let avance = pesoUsado * 100;
+
+  resultado.innerText = "Promedio actual: " + promedio.toFixed(2);
+  progreso.innerText = "Completado: " + avance.toFixed(1) + "%";
+}
+</script>
+</body>
+</html>
