@@ -1,6 +1,10 @@
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(180deg, #ffe4f2, #ffd6ec);
+  background: url("https://wallpapercave.com/wp/wp12901065.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  k
   color: #5a3d4d;
   text-align: center;
   padding: 40px;
