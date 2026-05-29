@@ -1,49 +1,50 @@
 body {
-  font-family: "Courier New", monospace;
-  background: linear-gradient(135deg, #ff71ce, #01cdfe, #05ffa1);
-  color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #2b1055, #120136 70%);
+  color: #e0d7ff;
   text-align: center;
-  padding: 30px;
+  padding: 40px;
 }
 
+/* glow suave */
 h1, h2, h3 {
-  text-shadow: 2px 2px #ff00ff;
+  color: #ff9de2;
+  text-shadow: 0 0 8px rgba(255, 157, 226, 0.6);
 }
 
+/* caja tipo glass */
 input {
   display: block;
-  margin: 10px auto;
-  padding: 10px;
-  width: 200px;
-  border: none;
-  border-radius: 10px;
-  background: rgba(0,0,0,0.3);
-  color: white;
-  outline: none;
+  margin: 12px auto;
+  padding: 12px;
+  width: 220px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  backdrop-filter: blur(6px);
 }
 
-input::placeholder {
-  color: #ddd;
-}
-
+/* botones decentes xd */
 button {
   margin: 10px;
-  padding: 10px 20px;
+  padding: 10px 22px;
+  border-radius: 999px;
   border: none;
-  border-radius: 20px;
-  background: #ff00ff;
+  background: linear-gradient(90deg, #ff71ce, #01cdfe);
   color: white;
-  font-weight: bold;
+  font-weight: 600;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.25s;
 }
 
 button:hover {
-  background: #01cdfe;
-  transform: scale(1.1);
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(1, 205, 254, 0.6);
 }
 
+/* texto abajo */
 h3, h4 {
   margin-top: 20px;
-  text-shadow: 1px 1px #000;
+  opacity: 0.9;
 }
